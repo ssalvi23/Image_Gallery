@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Kreon, sans-serif;
+    font-weight: 600;
+
+}
+:root {
+    --gradient: linear-gradient(45deg, #9290fc, #b8a7f7, #deaafc, #f4c8f5);
+}
+@keyframes gradientAnim {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.App {
+    overflow-x: hidden;   
+}
+.gradient {
+    background: linear-gradient(90deg, #ffffff36,#c19eee4b, #b873f841,#c4a7eb5e);
+    background-size: 200% 200%;
+    animation: gradientAnim 6s ease infinite;
+}
+
+header {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--gradient);
+    background-size: 200% 200%;
+    animation: gradientAnim 6s ease infinite;
+}
+.search-container {
+    height: fit-content;
+    position: relative;
+    margin: 10 50px;
+}
+.search-container input {
+    background-color: #ffffff23;
+    padding: 10px 50px;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    border-radius: 10px ;
+    width: 500px;
+}
+.search-container input:focus {
+    outline: none;
+}
+.search-container i {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding-left: 15px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.card {
+    width: 300px;
+    height: 350px;
+    margin: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 12px;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+.card:hover {
+    transform: scale(0.97);
+}
+.card::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card:hover::after {
+    visibility: hidden;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.card .image-hover-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dadada79;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.card .image-hover-container:hover {
+    opacity: 1;
+}
+.card .download-btn {
+    text-decoration: none;
+    background: var(--gradient);
+    background-size: 200% 200%;
+    color: #000;
+    text-align: center;
+    border: none;
+    box-shadow: rgb(26, 26, 26) 0px 3px 8px ;
+    border-radius: 10px;
+    width: 120px;
+    padding: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+.card .download-btn:hover {
+    animation: gradientAnim 2.5s ease infinite;
+}
+.card .download-btn i {
+    margin-left: 5px;
+}
+.user {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+.user img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 10px 15px;
+    padding: 1.5px;
+    box-shadow: 0px 0px 15px 4px #302e2eb7;
+    border: 3px solid #ffffffb7;
+}
+.user p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 0px 2px 5px #050505;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 700; 
+    word-wrap: break-word; 
+}
+.user a {
+    text-decoration: none;
+}
+.prev-btn,.next-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+    color: #27272780;
+    cursor: pointer;
+    margin: 30px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+.prev-btn {
+    left: 0;
+}
+.next-btn {
+    right: 0;
+}
+.next-btn:hover, .prev-btn:hover {
+    color: #27272742;
+}
+footer {
+    overflow: hidden;
+    width: 100%;
+    color: #000;
+    border-top: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background: var(--gradient);
+    background-size: 200% 200%;
+    animation: gradientAnim 6s ease infinite;
+}
+footer a {
+    color: #000;
+}
+footer i {
+    margin: 20px 12px;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+footer i:hover {
+    transform: scale(0.95);
+    color: #fff;
+}
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+@media  (max-width:1100px ) and (min-width:750px) {
+    .search-container input {
+        width: 350px;
+    }
+    header img {
+        width: 350px;
+    }
+}
+
+@media (max-width:750px) {
+    :root {
+        font-size: 12px;
+    } 
+    header {
+        height: 170px;
+        flex-direction: column-reverse;
+    }
+    .search-container input {
+       max-width: 300px;
+    }
+    header img {
+        width: 240px;
+        padding-bottom: 10px;
+    }
+    .card {
+        width: 270px;
+        height: 300px;
+    }
+    .card .download-btn {
+        width: 90px;
+    }
+    .err-image {
+        width: 200px;
+    }
+}
